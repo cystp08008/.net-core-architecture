@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Deng\\Desktop\\MIS\\MIS2020\\MIS2020.csproj",
+      "projectUniqueName": "C:\\Users\\Deng\\Desktop\\MIS\\core\\MIS2020\\MIS2020.csproj",
       "projectName": "MIS2020",
-      "projectPath": "C:\\Users\\Deng\\Desktop\\MIS\\MIS2020\\MIS2020.csproj",
+      "projectPath": "C:\\Users\\Deng\\Desktop\\MIS\\core\\MIS2020\\MIS2020.csproj",
       "packagesPath": "C:\\Users\\Deng\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Deng\\Desktop\\MIS\\MIS2020\\obj\\",
+      "outputPath": "C:\\Users\\Deng\\Desktop\\MIS\\core\\MIS2020\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -56,8 +56,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Deng\\Desktop\\MIS\\DBClassLibrary\\DBClassLibrary.csproj": {
-              "projectPath": "C:\\Users\\Deng\\Desktop\\MIS\\DBClassLibrary\\DBClassLibrary.csproj"
+            "C:\\Users\\Deng\\Desktop\\MIS\\core\\DBClassLibrary\\DBClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\Deng\\Desktop\\MIS\\core\\DBClassLibrary\\DBClassLibrary.csproj"
             }
           }
         }
