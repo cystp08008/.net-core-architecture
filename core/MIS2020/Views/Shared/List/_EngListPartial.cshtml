@@ -1,0 +1,14 @@
+﻿@model IEnumerable<DBClassLibrary.Models.Eng>
+
+<div data-tip="清空欄位即可選擇" id="eng">
+    <input id="engList" list="browsers" name="engList" class="form-control dropdown-toggle"/>
+    <datalist id="browsers" >
+        <option selected="selected" value=""></option>
+        @foreach (var item in Model)
+        {
+            <option value="@item.CengId @item.CengSna" v-bind:value="option.value"></option>
+        }
+    </datalist>
+</div>
+
+

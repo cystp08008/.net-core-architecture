@@ -1,0 +1,11 @@
+﻿@model IEnumerable<DBClassLibrary.Models.Eng>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@Html.Action("_EngListPartial", "Home")
+@foreach (var item in Model)
+{
+    @item.CengId
+}

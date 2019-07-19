@@ -1,0 +1,81 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "DBClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/DBClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DBClassLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DBClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../DBClassLibrary/DBClassLibrary.csproj",
+      "msbuildProject": "../DBClassLibrary/DBClassLibrary.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v2.2": [
+      "DBClassLibrary >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Deng\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Deng\\Desktop\\MIS\\MIS2020\\MIS2020.csproj",
+      "projectName": "MIS2020",
+      "projectPath": "C:\\Users\\Deng\\Desktop\\MIS\\MIS2020\\MIS2020.csproj",
+      "packagesPath": "C:\\Users\\Deng\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Deng\\Desktop\\MIS\\MIS2020\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Deng\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp2.2"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "projectReferences": {
+            "C:\\Users\\Deng\\Desktop\\MIS\\DBClassLibrary\\DBClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\Deng\\Desktop\\MIS\\DBClassLibrary\\DBClassLibrary.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp2.2": {
+        "imports": [
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true
+      }
+    }
+  }
+}

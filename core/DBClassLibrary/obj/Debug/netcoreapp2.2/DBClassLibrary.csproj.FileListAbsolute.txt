@@ -1,0 +1,11 @@
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\bin\Debug\netcoreapp2.2\DBClassLibrary.deps.json
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\bin\Debug\netcoreapp2.2\DBClassLibrary.dll
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\obj\Debug\netcoreapp2.2\DBClassLibrary.csprojAssemblyReference.cache
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\obj\Debug\netcoreapp2.2\DBClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\obj\Debug\netcoreapp2.2\DBClassLibrary.AssemblyInfoInputs.cache
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\obj\Debug\netcoreapp2.2\DBClassLibrary.AssemblyInfo.cs
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\bin\Debug\netcoreapp2.2\DBClassLibrary.runtimeconfig.json
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\bin\Debug\netcoreapp2.2\DBClassLibrary.runtimeconfig.dev.json
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\bin\Debug\netcoreapp2.2\DBClassLibrary.pdb
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\obj\Debug\netcoreapp2.2\DBClassLibrary.dll
+C:\Users\A5103048\Desktop\MIS\DBClassLibrary\obj\Debug\netcoreapp2.2\DBClassLibrary.pdb

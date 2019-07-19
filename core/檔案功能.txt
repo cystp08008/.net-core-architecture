@@ -1,0 +1,23 @@
+DBClassLibrary
+
+匯入的資料庫
+
+
+
+
+MIS2020
+
+Services >> PasswordEncrypt 加解密 與 (將輸入的密碼 與 DB讀取的加密密碼 比較是否相同) 
+Controller (LogIn)
+
+Extensions >> SessionExtensions 將Session實作 可儲存 物件
+Controller (LogIn)
+
+Filter 進入action前確認是否存在session (會員驗證登錄)  
+Controller (Home)  
+
+Extensions >> Microsoft.AspNetCore.Mvc.Rendering 實現 MVC5  @Html.Action  用於parital view   
+直接將資料傳給 parital view 在頁面上 使用 @Html.Action(Action,Controller) 即可出現parital View 頁面
+Controller (Home)   View (Index)
+
+
