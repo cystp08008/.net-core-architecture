@@ -62,7 +62,9 @@ namespace MIS2020
             services.AddTransient<IFavoriteFormRepository, FavoriteFormRepository>();
 
             //ControllerDI
-            services.AddTransient<IPasswordEncrypt, PasswordEncrypt>();
+            services.AddScoped<IPasswordEncrypt, PasswordEncrypt>();
+            services.AddScoped<ILogInService, LogInService>();
+            services.AddScoped<IHomeService, HomeService>();
 
             //Repository
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

@@ -2,29 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using core.CYSTP.Libs.Security.dotnet;
+using core.Models;
+using core.Services.CYSTP.Libs.Security.dotnet;
+using core.Services.LogIn;
 using core.SessionExtensions;
 using DBClassLibrary.Models;
 using DBClassLibrary.Models.Interface;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
-using MIS2020.Services.PasswordEncrypt;
 
 namespace core.Controllers
 {
     public class LogInController : Controller
     {
-        //DB
-        private readonly IRepository<Tuser> tuserRepository;
-        private readonly IRepository<WebLogin> webLoginRepository;
-        //Service
-        private readonly IPasswordEncrypt passwordEncrypt;
 
+        private readonly ILogInService logInService;
 
-        public LogInController(IRepository<Tuser> tuserepository, IRepository<WebLogin> webLoginRepository, IPasswordEncrypt passwordEncrypt)
+        public LogInController(ILogInService logInService)
         {
-            this.tuserRepository = tuserepository;
-            this.webLoginRepository = webLoginRepository;
-            this.passwordEncrypt = passwordEncrypt;
+
+            this.logInService = logInService;
         }
 
         public IActionResult LogIn()
@@ -35,42 +34,24 @@ namespace core.Controllers
         [HttpPost]
         public IActionResult LogIn(Tuser tuser)
         {
-            WebLogin webLogin = new WebLogin();
-            PasswordEncrypt passwordEncrypt = new PasswordEncrypt();
 
-            var logInUser = this.tuserRepository.GetFirst(m=>m.CusrName== tuser.CusrName);
-
+            var IpAddress = HttpContext.Features.Get<IHttpConnectionFeature>()?.RemoteIpAddress.ToString();
+            var logInUser = this.logInService.GetTuser(tuser.CusrName);
+            var c = this.logInService.ValidatePassword(logInUser, tuser.CusrPw);
             //驗證密碼 加密後 是否與 資料庫加密 密碼 符合
-            var tResult = (logInUser == null) ? false : this.passwordEncrypt.ValidatePassword(tuser.CusrPw, logInUser.CusrPw);
-
-            if (!tResult)
+            if (!this.logInService.ValidatePassword(logInUser, tuser.CusrPw))
             {
                 ViewBag.Mess = "帳號密碼錯誤";
+                this.logInService.CreateWebLogin(tuser.CusrPw, IpAddress);
 
-                webLogin.Cdate = DateTime.Now;
-                webLogin.Cname = "";
-                webLogin.CusrName = tuser.CusrName;
-                webLogin.Issuccess = false;
-                webLogin.IpAddress = "";
-                this.webLoginRepository.Create(webLogin);
                 return View();
             }
             else
             {
-                
-
-
-                //Session 儲存 使用者 object
+                this.logInService.CreateWebLogin(logInUser, IpAddress);
+         
                 HttpContext.Session.SetObject("user", logInUser);
 
-
-                webLogin.Cdate = DateTime.Now;
-                webLogin.Cname = logInUser.Cname;
-                webLogin.CusrName = tuser.CusrName;
-                webLogin.Issuccess = true;
-                webLogin.IpAddress = "";
-
-                this.webLoginRepository.Create(webLogin);
 
                 return RedirectToAction("Home", "Home");
             }

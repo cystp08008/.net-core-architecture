@@ -6,8 +6,9 @@ using System.Security.Cryptography;
 using System.Diagnostics;
 using System.Net.Security;
 using System.IO;
+using core.Services.CYSTP.Libs.Security.dotnet;
 
-namespace MIS2020.Services.PasswordEncrypt
+namespace core.CYSTP.Libs.Security.dotnet
 {
     public class PasswordEncrypt: IPasswordEncrypt
     {
@@ -19,7 +20,7 @@ namespace MIS2020.Services.PasswordEncrypt
         /// </summary>
         /// <param name="password">The password to hash.</param>
         /// <returns>The hash value of the password.</returns>
-        public static string HashPassword(string password)
+        public string HashPassword(string password)
         {
             if (String.IsNullOrEmpty(password))
             {
