@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using core.CYSTP.Libs.Security.dotnet;
-using core.Services.CYSTP.Libs.Security.dotnet;
-using core.Services.LogIn;
+using core.Services;
 using core.SessionExtensions;
 using DBClassLibrary.Models;
 using DBClassLibrary.Models.Interface;
@@ -17,14 +15,24 @@ namespace core.Controllers
     public class LogInController : Controller
     {
         #region Fields
-        private readonly ILogInService logInService;
+        private readonly ITuserService tuserService;
+        private readonly IWebLoginService webLoginService;
+        private readonly IPasswordEncryptService passwordEncryptService;
         #endregion
 
         #region Ctor
-        public LogInController(ILogInService logInService)
+        public LogInController
+        (
+            ITuserService tuserService,
+            IWebLoginService webLoginService,
+            IPasswordEncryptService passwordEncryptService
+        )
         {
 
-            this.logInService = logInService;
+            this.tuserService = tuserService;
+            this.webLoginService = webLoginService;
+            this.passwordEncryptService = passwordEncryptService;
+
         }
         #endregion
 
@@ -42,26 +50,31 @@ namespace core.Controllers
         {
 
             var IpAddress = HttpContext.Features.Get<IHttpConnectionFeature>()?.RemoteIpAddress.ToString();
-            var logInUser = this.logInService.GetTuser(tuser.CusrName);
+            var logInUser = this.tuserService.GetTuser(tuser.CusrName);
 
             //驗證密碼 加密後 是否與 資料庫加密 密碼 符合
-            if (!this.logInService.ValidatePassword(logInUser, tuser.CusrPw))
+            if (!this.tuserService.ValidatePassword(logInUser, tuser.CusrPw))
             {
                 ViewBag.Mess = "帳號密碼錯誤";
 
-                this.logInService.CreateWebLogin(tuser.CusrPw, IpAddress);
+                this.webLoginService.CreateWebLogin(tuser.CusrPw, IpAddress);
 
                 return View();
             }
             else
             {
-                this.logInService.CreateWebLogin(logInUser, IpAddress);
-         
+                this.webLoginService.CreateWebLogin(logInUser, IpAddress);
+
                 HttpContext.Session.SetObject("user", logInUser);
+
+                //var userAccount = logInUser.CusrName;
+                //var userName = logInUser.Cname;
+                //HttpContext.Session.SetString("userName", logInUser.Cname);
+                //HttpContext.Session.SetString("userAccount", logInUser.CusrName);
 
                 return RedirectToAction("Home", "Home");
             }
-                
+
         }
 
         #endregion

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace core.Services.CYSTP.Libs.Security.dotnet
+namespace core.Services
 {
-    public interface IPasswordEncrypt
+    public interface IPasswordEncryptService
     {
         bool ValidatePassword(string password, string storedPasswordHash);
         string EncryptAES(string encryptString, string encryptKey, string salt);

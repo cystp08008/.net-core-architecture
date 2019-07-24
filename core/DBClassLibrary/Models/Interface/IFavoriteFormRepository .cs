@@ -10,6 +10,6 @@ namespace DBClassLibrary.Models.Interface
 
     public interface IFavoriteFormRepository : IRepository<FavoriteForm>
     {
-        IQueryable<UserFavoriteList> GetUserAll(string cusr_name);
+        IQueryable<UserFavoriteList> GetUserFavorite(string cusr_name);
     }
 }

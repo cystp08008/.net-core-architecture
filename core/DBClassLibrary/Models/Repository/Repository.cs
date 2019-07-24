@@ -1,5 +1,4 @@
-﻿using core.Models;
-using DBClassLibrary.Models.Interface;
+﻿using DBClassLibrary.Models.Interface;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

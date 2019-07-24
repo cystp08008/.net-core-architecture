@@ -49,7 +49,7 @@ namespace AuthorizationCenter.Filters
             else if (user== null)
             {
 
-                context.HttpContext.Response.WriteAsync("<script>alert('請重新登入!!');location.href='/LogIn/LogIn'</script>", Encoding.GetEncoding("GB2312"));
+                context.HttpContext.Response.WriteAsync("<script>alert('請重新登入!!');location.href='/LogIn/LogIn'</script>"/*, Encoding.GetEncoding("GB2312")*/);
                 // 跳轉
              
             }

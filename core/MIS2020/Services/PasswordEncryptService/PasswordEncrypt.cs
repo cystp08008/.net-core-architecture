@@ -6,11 +6,11 @@ using System.Security.Cryptography;
 using System.Diagnostics;
 using System.Net.Security;
 using System.IO;
-using core.Services.CYSTP.Libs.Security.dotnet;
 
-namespace core.CYSTP.Libs.Security.dotnet
+
+namespace core.Services
 {
-    public class PasswordEncrypt: IPasswordEncrypt
+    public class PasswordEncryptService : IPasswordEncryptService
     {
         private const int PasswordSaltSize = 8;
         private const int PasswordSaltLength = 12;      // Accounts for base64 overhead

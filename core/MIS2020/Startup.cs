@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using core.CYSTP.Libs.Security.dotnet;
+
 using core.Services;
-using core.Services.CYSTP.Libs.Security.dotnet;
-using core.Services.LogIn;
 using DBClassLibrary.Models;
 using DBClassLibrary.Models.Interface;
 using DBClassLibrary.Models.Repository;
@@ -66,10 +64,14 @@ namespace MIS2020
             services.AddTransient<IFavoriteFormRepository, FavoriteFormRepository>();
 
             //ControllerDI
-            services.AddScoped<IPasswordEncrypt, PasswordEncrypt>();
-            services.AddScoped<ILogInService, LogInService>();
-            services.AddScoped<IHomeService, HomeService>();
+            services.AddScoped<IPasswordEncryptService, PasswordEncryptService>();
             services.AddScoped<IFavoriteService, FavoriteService>();
+            services.AddScoped<IEngService, EngService>();
+            services.AddScoped<IFormGroupService, FormGroupService>();
+            services.AddScoped<IRightService, RightService>();
+            services.AddScoped<ITuserService, TuserService>();
+            services.AddScoped<IUserBehaviorLogService, UserBehaviorLogService>();
+            services.AddScoped<IWebLoginService, WebLoginService>();
 
             //Repository
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

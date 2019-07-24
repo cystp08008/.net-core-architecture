@@ -15,7 +15,7 @@ namespace DBClassLibrary.Models.Repository
             _Bom2013Context = context;
         }
 
-        public IQueryable<UserFavoriteList> GetUserAll(string cusr_name)
+        public IQueryable<UserFavoriteList> GetUserFavorite(string cusr_name)
         {
             return (from F in _Bom2013Context.Form
                     join FF in _Bom2013Context.FavoriteForm on F.CfrmName equals FF.CfrmgroupId

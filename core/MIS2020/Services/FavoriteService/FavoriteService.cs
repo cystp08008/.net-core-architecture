@@ -35,11 +35,12 @@ namespace core.Services
             //判斷是否已加入快速連結
             if (insertFavorite == null)
             {
-                FavoriteForm favoriteForm = new FavoriteForm();
-
-                favoriteForm.CfrmgroupId = favorite;
-                favoriteForm.Inum = '8';
-                favoriteForm.CusrName = cusrName;
+                var favoriteForm = new FavoriteForm
+                {
+                    CfrmgroupId = favorite,
+                    Inum = '8',
+                    CusrName = cusrName
+                };
 
                 this.favoriteFormRepository.Create(favoriteForm);
             }
@@ -65,7 +66,7 @@ namespace core.Services
         /// <returns>使用者所有快速連結</returns>
         public IQueryable<UserFavoriteList> GetUserFavorite(string cusrName)
         {
-            return this.favoriteFormRepository.GetUserAll(cusrName);
+            return this.favoriteFormRepository.GetUserFavorite(cusrName);
         }
 
         #endregion
