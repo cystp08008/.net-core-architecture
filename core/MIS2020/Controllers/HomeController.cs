@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using core.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using DBClassLibrary.Models.Interface;
@@ -15,44 +14,56 @@ using DBClassLibrary.Models;
 using core.CYSTP.Libs.Security.dotnet;
 using AuthorizationCenter.Filters;
 using core.Services;
+using Nop.Web.Framework.Mvc;
 
 namespace core.Controllers
 {
     public class HomeController : Controller
     {
+        #region Fields
+
         private readonly Bom2013Context Bom2013Context;
-        private readonly IV_BomTxtRepository v_BomTxtRepository;
         private readonly IRepository<Making> makingRepository;
         private readonly IHomeService homeService;
+
+        #endregion
+
+        #region Ctor
         public HomeController(
 
             Bom2013Context Bom2013Context,
-            IV_BomTxtRepository v_BomTxtRepository,
             IRepository<Making> makingRepository,
             IHomeService homeService
+
             )
         {
 
 
             this.Bom2013Context = Bom2013Context;
-            this.v_BomTxtRepository = v_BomTxtRepository;
             this.makingRepository = makingRepository;
             this.homeService = homeService;
 
         }
+        #endregion
+
+
+        #region ViewAction
         [AuthenticatedFilter]
         public IActionResult Home()
         {
-            //var a = this.Bom2013Context.Eng;
-            //var blogs = this.Bom2013Context.Database.ExecuteSqlCommand("[dbo].[GetFormData]");
-            ////ViewData["a"] = blogs;
-            ////var fd = this.engRepository.Get();
-            //var k = this.v_BomTxtRepository.GetV_BomTxt();
-            
+
+
             return View();
         }
+        #endregion
 
 
+        #region Methods
+
+
+        #region 導覽列顯示
+
+        //Get 頂端導覽列 項目 A B C D
         [AuthenticatedFilter]
         public IActionResult GetMain()
         {
@@ -63,21 +74,21 @@ namespace core.Controllers
             return Json(result);
         }
 
-
+        //Get 側邊導覽列 主項目AA AB
         [AuthenticatedFilter]
-        public ActionResult GetMenu(string clickMenu)
+        public ActionResult GetMainMenu(string main)
         {
             var user = HttpContext.Session.GetObject<Tuser>("user");
             //
-            var title = this.homeService.GetMainMenu(user.CusrName, clickMenu);
+            var title = this.homeService.GetMainMenu(user.CusrName, main);
 
 
             return Json(title);
 
 
         }
-      
-        //以側邊導覽列 主項目 查詢子項目
+
+        //Get 以側邊導覽列 子項目 AA01 AA02
         [AuthenticatedFilter]
         public ActionResult GetSubMenu(string Menu)
         {
@@ -86,26 +97,30 @@ namespace core.Controllers
 
 
             var subMenu = this.homeService.GetSubMenu(user.CusrName, Menu);
-         
+
             return Json(subMenu);
 
 
         }
 
+        #endregion
+
+        #region 使用者 變更密碼 欲選取工程 使用紀錄
+        //Update 密碼
         [AuthenticatedFilter]
-        public ActionResult SetPwd(string pwd)
+        public ActionResult UpdatePwd(string pwd)
         {
             var user = HttpContext.Session.GetObject<Tuser>("user");
 
 
-            this.homeService.UpdatePwd(user,pwd);
+            this.homeService.UpdatePwd(user, pwd);
 
 
             return RedirectToAction("Home", "Home");
 
         }
 
-
+        //判斷輸入工程 並建立Session
         [AuthenticatedFilter]
         public ActionResult SetEng(string checkEng)
         {
@@ -113,7 +128,7 @@ namespace core.Controllers
 
             var eng = this.homeService.IsEng(checkEng);
 
-            HttpContext.Session.SetObject("eng",eng);
+            HttpContext.Session.SetObject("eng", eng);
 
 
             return Json(eng);
@@ -121,16 +136,18 @@ namespace core.Controllers
 
         //紀錄 使用者 使用功能
         [AuthenticatedFilter]
-        public ActionResult SetCfrm_name(string cfrm_name)
+        public ActionResult CreateUserBehaviorLog(string cfrmName)
         {
             var user = HttpContext.Session.GetObject<Tuser>("user");
 
-            this.homeService.CreateUserBehaviorLog( cfrm_name,user.CusrName);
+            this.homeService.CreateUserBehaviorLog(cfrmName, user.CusrName);
 
-            return Json("");
+            return new NullJsonResult();
         }
 
+        #endregion
 
+        #endregion
 
 
 

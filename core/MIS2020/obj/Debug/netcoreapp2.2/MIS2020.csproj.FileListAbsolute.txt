@@ -32,3 +32,11 @@ C:\Users\A5103048\Desktop\MIS\MIS2020\bin\Debug\netcoreapp2.2\DBClassLibrary.dll
 C:\Users\A5103048\Desktop\MIS\MIS2020\bin\Debug\netcoreapp2.2\DBClassLibrary.pdb
 C:\Users\A5103048\Desktop\MIS\MIS2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\List\_EngListPartial.g.cshtml.cs
 C:\Users\A5103048\Desktop\MIS\MIS2020\obj\Debug\netcoreapp2.2\Razor\Views\LogIn\LogIn.g.cshtml.cs
+C:\Users\A5103048\Desktop\MIS\core\MIS2020\obj\Debug\netcoreapp2.2\MIS2020.csprojAssemblyReference.cache
+C:\Users\A5103048\Desktop\MIS\core\MIS2020\obj\Debug\netcoreapp2.2\MIS2020.csproj.CoreCompileInputs.cache
+C:\Users\A5103048\Desktop\MIS\core\MIS2020\obj\Debug\netcoreapp2.2\MIS2020.RazorAssemblyInfo.cache
+C:\Users\A5103048\Desktop\MIS\core\MIS2020\obj\Debug\netcoreapp2.2\MIS2020.RazorAssemblyInfo.cs
+C:\Users\A5103048\Desktop\MIS\core\MIS2020\obj\Debug\netcoreapp2.2\MIS2020.AssemblyInfoInputs.cache
+C:\Users\A5103048\Desktop\MIS\core\MIS2020\obj\Debug\netcoreapp2.2\MIS2020.AssemblyInfo.cs
+C:\Users\A5103048\Desktop\MIS\core\MIS2020\obj\Debug\netcoreapp2.2\MIS2020.dll
+C:\Users\A5103048\Desktop\MIS\core\MIS2020\obj\Debug\netcoreapp2.2\MIS2020.pdb

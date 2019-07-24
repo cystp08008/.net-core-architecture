@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A5103048\\Desktop\\MIS\\MIS2020\\MIS2020.csproj": {}
+    "C:\\Users\\A5103048\\Desktop\\MIS\\core\\MIS2020\\MIS2020.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A5103048\\Desktop\\MIS\\DBClassLibrary\\DBClassLibrary.csproj": {
+    "C:\\Users\\A5103048\\Desktop\\MIS\\core\\DBClassLibrary\\DBClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A5103048\\Desktop\\MIS\\DBClassLibrary\\DBClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\A5103048\\Desktop\\MIS\\core\\DBClassLibrary\\DBClassLibrary.csproj",
         "projectName": "DBClassLibrary",
-        "projectPath": "C:\\Users\\A5103048\\Desktop\\MIS\\DBClassLibrary\\DBClassLibrary.csproj",
+        "projectPath": "C:\\Users\\A5103048\\Desktop\\MIS\\core\\DBClassLibrary\\DBClassLibrary.csproj",
         "packagesPath": "C:\\Users\\A5103048\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A5103048\\Desktop\\MIS\\DBClassLibrary\\obj\\",
+        "outputPath": "C:\\Users\\A5103048\\Desktop\\MIS\\core\\DBClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -60,14 +60,14 @@
         }
       }
     },
-    "C:\\Users\\A5103048\\Desktop\\MIS\\MIS2020\\MIS2020.csproj": {
+    "C:\\Users\\A5103048\\Desktop\\MIS\\core\\MIS2020\\MIS2020.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A5103048\\Desktop\\MIS\\MIS2020\\MIS2020.csproj",
+        "projectUniqueName": "C:\\Users\\A5103048\\Desktop\\MIS\\core\\MIS2020\\MIS2020.csproj",
         "projectName": "MIS2020",
-        "projectPath": "C:\\Users\\A5103048\\Desktop\\MIS\\MIS2020\\MIS2020.csproj",
+        "projectPath": "C:\\Users\\A5103048\\Desktop\\MIS\\core\\MIS2020\\MIS2020.csproj",
         "packagesPath": "C:\\Users\\A5103048\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A5103048\\Desktop\\MIS\\MIS2020\\obj\\",
+        "outputPath": "C:\\Users\\A5103048\\Desktop\\MIS\\core\\MIS2020\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -86,8 +86,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\A5103048\\Desktop\\MIS\\DBClassLibrary\\DBClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\A5103048\\Desktop\\MIS\\DBClassLibrary\\DBClassLibrary.csproj"
+              "C:\\Users\\A5103048\\Desktop\\MIS\\core\\DBClassLibrary\\DBClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\A5103048\\Desktop\\MIS\\core\\DBClassLibrary\\DBClassLibrary.csproj"
               }
             }
           }

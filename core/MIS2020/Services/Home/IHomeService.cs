@@ -6,9 +6,15 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace core.Services
-{
+{      
+        /// <summary>
+        ///Homeservice interface
+        /// </summary>
     public partial interface IHomeService
     {
+
+
+
         /// <summary>
         /// Get 頁面頂端導覽列 A資料維護
         /// </summary>

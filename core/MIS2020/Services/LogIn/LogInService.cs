@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using core.Services.CYSTP.Libs.Security.dotnet;
 using DBClassLibrary.Models;
 using DBClassLibrary.Models.Interface;
-using IdentityModel.Client;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 

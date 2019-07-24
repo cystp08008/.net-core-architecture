@@ -26,14 +26,14 @@ namespace core.Services.LogIn
         /// <returns>密碼是否吻合</returns>
         bool ValidatePassword(Tuser logInUser, string cusrPw);
         /// <summary>
-        /// Ineset WebLogIn登入訊息(成功)
+        /// Insert WebLogIn登入訊息(成功)
         /// </summary>
         /// <param name="cusrName">欲帳號Tuser Object</param>
         /// <param name="cname">登入者姓名</param>
         ///
         void CreateWebLogin(Tuser tuser,string IpAddress);
         /// <summary>
-        /// Ineset WebLogIn登入訊息(失敗)
+        /// Insert WebLogIn登入訊息(失敗)
         /// </summary>
         /// <param name="cusrName">登入者輸入的帳號</param>
         ///

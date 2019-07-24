@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using core.CYSTP.Libs.Security.dotnet;
+using core.Services;
+using core.Services.CYSTP.Libs.Security.dotnet;
+using core.Services.LogIn;
 using DBClassLibrary.Models;
 using DBClassLibrary.Models.Interface;
 using DBClassLibrary.Models.Repository;
@@ -14,7 +18,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MIS2020.Services.PasswordEncrypt;
+
 
 namespace MIS2020
 {
@@ -65,6 +69,7 @@ namespace MIS2020
             services.AddScoped<IPasswordEncrypt, PasswordEncrypt>();
             services.AddScoped<ILogInService, LogInService>();
             services.AddScoped<IHomeService, HomeService>();
+            services.AddScoped<IFavoriteService, FavoriteService>();
 
             //Repository
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
